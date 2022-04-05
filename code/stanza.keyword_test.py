@@ -13,5 +13,6 @@ pos = [f'{text.xpos}' for text in text.sentences for text in text.words]
 
 # print(frame)
 df = pd.DataFrame({"text":txt,"pos":pos},index=range(0,len(txt)))
-# df.to_excel('stanza_test(2).xlsx')
-print(df)
+
+# print(df)
+df.to_excel('stanza_test.xlsx')

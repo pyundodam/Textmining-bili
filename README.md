@@ -1,2 +1,2 @@
 # Textmining-bili
-Chinese popular video comment data text mining
+Chinese popular video title data text mining
