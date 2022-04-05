@@ -3,7 +3,7 @@ import stanza
 from collections import Counter
 import pandas as pd
 
-stanza.download('zh',processors='tokenize,pos');
+stanza.download('zh',processors='tokenize,pos')
 nlp = stanza.Pipeline('zh', processors='tokenize,pos')
 text = nlp("我爱北京天安门")
 
