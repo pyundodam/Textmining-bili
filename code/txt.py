@@ -15,7 +15,7 @@ num = re.sub(r'\d+',' ',parse)
 eng = re.sub('[a-zA-Z]' , ' ', num)
 null = eng.replace('\n',' ')
 
-df = pd.DataFrame({"text":null},index=[1])
+df = pd.DataFrame({"text":null},index=[0]) #값이 가로로 나옴 (22.04.06)
 print(df)
 
 # def get_words(text):
