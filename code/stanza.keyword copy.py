@@ -20,7 +20,7 @@ def text_cleaning(column3):
     null = eng.replace('\n',' ')
     return null
 
-column3[0]=column3[0].apply(lambda x: text_cleaning(x))
+  
 # column3.to_excel('column3_test.xlsx') #엑셀 출력 문제 없는 것 확인
 
 # print(column3)
