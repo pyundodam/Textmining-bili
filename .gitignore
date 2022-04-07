@@ -4,3 +4,7 @@
 /code/*.txt
 /Textmining-bili/*.xlsx
 /Textmining-bili/*.txt
+/file/*.xlsx
+/file/*.txt
+/file/*
+change_txt.py
