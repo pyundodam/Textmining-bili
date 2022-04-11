@@ -4,6 +4,7 @@ import stanza
 from collections import Counter
 import pandas as pd
 import re
+from apyori import apriori
 
 stanza.download('zh',processors='tokenize,pos')
 nlp = stanza.Pipeline('zh', processors='tokenize,pos')
@@ -43,4 +44,18 @@ column3 = column2.drop(['Unnamed: 3'],axis=1) #엑셀에서 필요없는 열 제
 # print(column3)
 
 column3['word'] = data
-column3.to_excel('bili_Keyword_舞蹈_Keyword.xlsx')
+
+
+# df_data = pd.DataFrame(data)
+
+apriori_rule = list(apriori(data,min_support=0.1,min_confidence=0.1,min_lift=1,min_length=1))
+apriori_results = pd.DataFrame(apriori_rule)
+
+# column3.to_excel('bili_Keyword_舞蹈_Keyword(220411).xlsx') #엑셀에 형태소 분석 결과 삽입
+
+# column3.to_excel('test(apori)2.xlsx')
+
+print(apriori_results)
+
+# apriori_results.to_excel(pd.ExcelWriter("bili_Keyword_舞蹈_Keyword(220411).xlsx",mode="w",engine="openpyxl"), sheet_name = "analysis", index = False)
+# print("fin")

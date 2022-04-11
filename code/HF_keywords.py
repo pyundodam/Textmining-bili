@@ -6,6 +6,7 @@ from collections import Counter
 import pandas as pd
 import re
 import os
+from apyori import apriori
 
 stanza.download('zh',processors='tokenize,pos')
 nlp = stanza.Pipeline('zh', processors='tokenize,pos')
@@ -40,6 +41,7 @@ export_count = pd.DataFrame(HF_keyword)
 
 with pd.ExcelWriter("완성본.xlsx",mode="a",engine="openpyxl") as writer :
     export_count.to_excel(writer, sheet_name = "Count", index = False)
+
 
 
 
