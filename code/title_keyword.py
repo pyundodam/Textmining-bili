@@ -1,4 +1,5 @@
 from encodings import utf_8
+from openpyxl import Workbook
 import stanza
 from collections import Counter
 import pandas as pd
@@ -29,7 +30,7 @@ for i in read_txt:
     data.append(get_words(pos))
     n+=1
 
-print(data) # 형태소가 리스트에 저장됨 #0번방이 colum3의 0번 행과 결합하면 됨
+# print(data) # 형태소가 리스트에 저장됨 #0번방이 colum3의 0번 행과 결합하면 됨
 
 #기존 엑셀에 형태소 분석 결과 삽입
 
@@ -41,8 +42,5 @@ column3 = column2.drop(['Unnamed: 3'],axis=1) #엑셀에서 필요없는 열 제
 
 # print(column3)
 
-# [] 써볼거임
 column3['word'] = data
-column3.to_excel('test(6).xlsx')
-
-# column3["word"]=column3.apply(lambda x: get_words(x))
+column3.to_excel('bili_Keyword_舞蹈_Keyword.xlsx')
